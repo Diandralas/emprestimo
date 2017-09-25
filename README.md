@@ -18,36 +18,10 @@ Vamos criar um sistema que permite com que o cliente se cadastre e faça emprés
 
 5- Criar uma rota para que o cliente faça login. Entregar um token via header para que ele utilize nas chamadas da API.
 
-6- Criar um enpoint para simular empréstimo, o "/simulacao". Esse endpoint é protegido por token e solicita os seguintes dados:
-
-{
-	"valor": 2000,
-	"parcelas": 4
-}
-
-Esse endpoint irá retornar a seguinte resposta (Dividir o valor pelas parcelas):
-
-{
-	"parcela": 500
-}
+6- Criar um enpoint para simular empréstimo, o "/simulacao".
 
 7- Aprimorar o endpoint acima para que ele só permita empréstimos até 30% da renda do cliente e até 6 parcelas. Responder com o status 401 para empréstimos acima desse valor.
 
 8- Fazer mais uma melhoria no empréstimo que adiciona uma taxa de juros simples de 8% ao mês no valor do empréstimo.
 
-8- Criar um endpoint protegido por token que efetiva um empréstimo, o "/emprestimo". Ele recebe os mesmos dados e se comporta da mesma forma que o endpoint de simulação, porém, em caso de sucesso, ele insere um empréstimo dentro do documento do cliente, da seguinte forma:
-
-{
-	"_id":"cAonmsdf0324lis234Eesdfnte1",
-	"nome": "Bruno",
-	"renda": 5000,
-	"email": "bruno@mastertech.tech",
-	"senha": "sha1$asdf#:aklsdfqewreew",
-	"emprestimos": [
-		{
-			"valor": 2000,
-			"parcelas": 4,
-			"data": "20/09/2017"
-		}
-	]
-}
+8- Criar um endpoint protegido por token que efetiva um empréstimo, o "/emprestimo". Ele recebe os mesmos dados e se comporta da mesma forma que o endpoint de simulação, porém, em caso de sucesso, ele insere um empréstimo dentro do documento do cliente.
